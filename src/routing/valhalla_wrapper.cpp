@@ -35,7 +35,7 @@ std::string ValhallaWrapper::get_matrix_query(
   std::string query = "GET /" + _server.path + _matrix_service + "?json=";
   
   const std::string extra_options =
-    "\"costing_options\":{\"auto\":{\"use_ferry\":\"0.1\",\"ferry_cost\":600}}";
+    "\"costing_options\":{\"auto\":{\"shortest\":\true,\"use_ferry\":\"0.1\",\"ferry_cost\":600}}";
 
   // List locations.
   std::string all_locations;
@@ -62,7 +62,7 @@ std::string
 ValhallaWrapper::get_route_query(const std::vector<Location>& locations) const {
 
   const std::string extra_options =
-    "\"costing_options\":{\"auto\":{\"use_ferry\":\"0.1\",\"ferry_cost\":600}}";
+    "\"costing_options\":{\"auto\":{\"shortest\":\true,\"use_ferry\":\"0.1\",\"ferry_cost\":600}}";
   
   // Building matrix query for Valhalla.
   std::string query =
